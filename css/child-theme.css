@@ -21247,9 +21247,11 @@ form .wpcf7-response-output {
   font-size: var(--fs-300);
 }
 
-fieldset.cols-md-3 .gfield_checkbox {
-  -moz-columns: 3;
-  columns: 3;
+@media (min-width: 992px) {
+  fieldset.cols-md-3 .gfield_checkbox {
+    -moz-columns: 3;
+    columns: 3;
+  }
 }
 
 .form-control, .gform_wrapper.gravity-theme input[type=text],
@@ -21519,22 +21521,36 @@ fieldset.cols-md-3 .gfield_checkbox {
 .latest_news .latest_news__grid,
 .jobs .latest_news__grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
 .news .news__grid,
 .latest_news .news__grid,
 .jobs .news__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 .news .jobs__grid,
 .latest_news .jobs__grid,
 .jobs .jobs__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
+}
+@media (min-width: 992px) {
+  .news .latest_news__grid,
+.latest_news .latest_news__grid,
+.jobs .latest_news__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .news .news__grid,
+.latest_news .news__grid,
+.jobs .news__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .news .jobs__grid,
+.latest_news .jobs__grid,
+.jobs .jobs__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 .news__card,
 .latest_news__card,

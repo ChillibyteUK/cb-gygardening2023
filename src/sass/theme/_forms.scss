@@ -38,7 +38,9 @@ form .wpcf7-response-output {
 }
 
 fieldset.cols-md-3 .gfield_checkbox {
-    columns: 3;
+    @media (min-width:992px) {
+        columns: 3;
+    }
 }
 
 
