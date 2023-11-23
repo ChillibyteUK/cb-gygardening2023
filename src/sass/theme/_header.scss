@@ -1,0 +1,34 @@
+#wrapperNavbar {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+    .navbar {
+        padding: 0;
+    }
+    button.menu {
+        background-color: white;
+        color: var(--col-primary-400);
+        border: none;
+        text-transform: uppercase;
+        padding: 0.5rem 1rem;
+        z-index: 9999;
+    }
+    .offcanvas-body {
+        padding-top: 3rem;
+        .nav-link {
+            color: var(--col-primary-400);
+        }
+    }
+
+}
+
+.gylogo {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    width: 180px;
+    z-index: 9999;
+    filter: drop-shadow(0 0 0.5px #444);
+}
+

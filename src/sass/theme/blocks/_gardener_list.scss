@@ -1,0 +1,21 @@
+.gardener_list {
+    &__card {
+        display: grid;
+        gap: 1rem;
+        @media (min-width:768px) {
+            grid-template-columns: 200px auto;
+        }
+        margin-bottom: 2rem;
+        img {
+            border-radius: 100vw;
+            border: 0.5rem solid var(--col-grey);
+            width: 100%;
+            max-width: 260px;
+            aspect-ratio: 1;
+            margin-inline: auto;
+        }
+        div {
+            max-width: 70ch;
+        }
+    }
+}
