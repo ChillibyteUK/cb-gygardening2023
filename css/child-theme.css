@@ -21341,6 +21341,9 @@ form .wpcf7-response-output {
   background-repeat: no-repeat;
   min-height: 100vh;
 }
+.full-hero .slick-slide div {
+  text-align: center;
+}
 
 .short-hero {
   min-height: 50vh;
