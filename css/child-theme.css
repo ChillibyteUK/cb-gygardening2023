@@ -20924,9 +20924,10 @@ h1 span, .h1 span, h2 span, .h2 span, h3 span, .h3 span, h4 span, .h4 span, .h99
   padding: 0;
 }
 #wrapperNavbar button.menu {
-  background-color: white;
+  background-color: #ffffffcc;
   color: var(--col-primary-400);
   border: none;
+  border-bottom-left-radius: 0.1rem;
   text-transform: uppercase;
   padding: 0.5rem 1rem;
   z-index: 9999;
@@ -21235,6 +21236,7 @@ form .wpcf7-response-output {
 }
 .full-hero__inner {
   width: min(800px, 90vw);
+  padding-top: 4rem;
 }
 .full-hero img {
   margin-bottom: 2rem;
@@ -21244,7 +21246,7 @@ form .wpcf7-response-output {
 }
 .full-hero h1, .full-hero .h1 {
   color: #fff;
-  font-size: var(--fs-900);
+  font-size: var(--fs-800);
   font-weight: var(--fw-400);
   font-family: var(--ff-body);
   line-height: 1.1;
@@ -21262,12 +21264,14 @@ form .wpcf7-response-output {
 }
 .full-hero .carousel, .full-hero .carousel-inner {
   min-height: 100vh;
+  height: 100%;
 }
 .full-hero .carousel-item {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   min-height: 100vh;
+  height: 100%;
 }
 
 .short-hero {

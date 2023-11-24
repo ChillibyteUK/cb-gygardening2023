@@ -10,6 +10,7 @@
 
     &__inner {
         width: min(800px,90vw);
+        padding-top: 4rem;
     }
 
     img {
@@ -20,7 +21,7 @@
     }
     h1 {
         color: #fff;
-        font-size: var(--fs-900);
+        font-size: var(--fs-800);
         font-weight: var(--fw-400);
         font-family: var(--ff-body);
         line-height: 1.1;
@@ -45,12 +46,14 @@
     }
     .carousel, .carousel-inner {
         min-height: 100vh;
+        height: 100%;
     }
     .carousel-item {
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         min-height: 100vh;
+        height: 100%;
     }
 
     // .slick-slide div {
