@@ -20919,6 +20919,12 @@ h1 span, .h1 span, h2 span, .h2 span, h3 span, .h3 span, h4 span, .h4 span, .h99
   z-index: 9999;
   top: 0;
   right: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row-reverse;
+  transition: transform var(--transition);
 }
 #wrapperNavbar .navbar {
   padding: 0;
@@ -20938,13 +20944,18 @@ h1 span, .h1 span, h2 span, .h2 span, h3 span, .h3 span, h4 span, .h4 span, .h99
 #wrapperNavbar .offcanvas-body .nav-link {
   color: var(--col-primary-400);
 }
+#wrapperNavbar.hide {
+  transform: translateY(-100px);
+}
 
 .gylogo {
-  position: fixed;
-  top: 1rem;
+  position: relative;
+  top: 0.5rem;
   left: 1rem;
   width: 180px;
-  z-index: 9999;
+  aspect-ratio: 3/1;
+  background-image: url(../img/gy-gardening-logo--wo.svg);
+  background-size: contain;
   filter: drop-shadow(0 0 0.5px #444);
 }
 

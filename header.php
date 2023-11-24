@@ -113,33 +113,35 @@ if (is_front_page()) {
 do_action('wp_body_open');
 ?>
     <div id="wrapperNavbar">
-        <nav class="navbar d-flex justify-content-end">
-            <button class="menu" id="menutoggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#rightOffcanvas" aria-controls="rightOffcanvas">
+        <nav class="navbar">
+            <button class="menu" id="menutoggle" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#rightOffcanvas" aria-controls="rightOffcanvas">
                 Menu <i class="fa-solid fa-bars"></i>
             </button>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="rightOffcanvas" aria-labelledby="rightOffcanvasLabel">
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="rightOffcanvas"
+                aria-labelledby="rightOffcanvasLabel">
                 <div class="offcanvas-body">
-                <?php
+                    <?php
                     wp_nav_menu(
                         array(
-                    'theme_location'  => 'primary_nav',
-                    'container_class' => 'container-xl w-100',
-                    'menu_class'      => 'navbar-nav justify-content-between gap-1',
-                    'fallback_cb'     => '',
-                    'menu_id'         => 'navbarr',
-                    'depth'           => 3,
-                    'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
-                    )
+'theme_location'  => 'primary_nav',
+'container_class' => 'container-xl w-100',
+'menu_class'      => 'navbar-nav justify-content-between gap-1',
+'fallback_cb'     => '',
+'menu_id'         => 'navbarr',
+'depth'           => 3,
+'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
+)
                     );
-                    ?>
+?>
                 </div>
             </div>
         </nav>
-    </div>
-<?php
+        <?php
 if (!is_front_page()) {
     ?>
-<a class="gylogo" href="/"><img src="<?=get_stylesheet_directory_uri()?>/img/gy-gardening-logo--wo.svg" alt="Home"></a>
-    <?php
+        <a class="gylogo" href="/"></a>
+        <?php
 }
 ?>
+    </div>
