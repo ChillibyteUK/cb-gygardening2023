@@ -21449,12 +21449,6 @@ form .wpcf7-response-output {
   font-size: 1.2rem;
 }
 
-.news .latest_news__grid,
-.latest_news .latest_news__grid,
-.jobs .latest_news__grid {
-  display: grid;
-  gap: 1rem;
-}
 .news .news__grid,
 .latest_news .news__grid,
 .jobs .news__grid {
@@ -21468,11 +21462,6 @@ form .wpcf7-response-output {
   gap: 1rem;
 }
 @media (min-width: 992px) {
-  .news .latest_news__grid,
-.latest_news .latest_news__grid,
-.jobs .latest_news__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
   .news .news__grid,
 .latest_news .news__grid,
 .jobs .news__grid {
@@ -21489,6 +21478,7 @@ form .wpcf7-response-output {
 .jobs__card {
   background-color: var(--col-grey);
   color: var(--body-color);
+  display: block;
 }
 .news__card img,
 .latest_news__card img,

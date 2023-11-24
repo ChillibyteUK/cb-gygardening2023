@@ -1,10 +1,6 @@
 .news,
 .latest_news,
 .jobs {
-    .latest_news__grid {
-        display: grid;
-        gap: 1rem;
-    }
     .news__grid {
         display: grid;
         gap: 1rem;
@@ -15,9 +11,6 @@
     }
 
     @media (min-width:992px) {
-        .latest_news__grid {
-            grid-template-columns: repeat(2,1fr);
-        }
         .news__grid {
             grid-template-columns: repeat(3,1fr);
         }
@@ -29,6 +22,7 @@
     &__card {
         background-color: var(--col-grey);
         color: var(--body-color);
+        display: block;
         img {
             aspect-ratio: 16 / 9;
             object-fit: cover;
