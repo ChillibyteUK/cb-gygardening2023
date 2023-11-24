@@ -13,7 +13,8 @@ require_once CB_THEME_DIR . '/inc/cb-blocks.php';
 remove_action('wp_enqueue_scripts', 'wp_enqueue_global_styles');
 remove_action('wp_body_open', 'wp_global_styles_render_svg_filters');
 
-
+// disable theme/plugin file editor
+define('DISALLOW_FILE_EDIT', true);
 
 // Remove comment-reply.min.js from footer
 function remove_comment_reply_header_hook()
@@ -238,31 +239,31 @@ add_action('wp_enqueue_scripts', 'cb_theme_enqueue');
 
 
 
-add_shortcode('phone_emily', function(){
+add_shortcode('phone_emily', function () {
     if (get_field('contact_emily', 'options')) {
         return '<a href="tel:' . parse_phone(get_field('contact_emily', 'options')) . '">' . get_field('contact_emily', 'options') . '</a>';
     }
     return;
 });
-add_shortcode('phone_judith', function(){
+add_shortcode('phone_judith', function () {
     if (get_field('contact_judith', 'options')) {
         return '<a href="tel:' . parse_phone(get_field('contact_judith', 'options')) . '">' . get_field('contact_judith', 'options') . '</a>';
     }
     return;
 });
-add_shortcode('phone_emily_btn', function(){
+add_shortcode('phone_emily_btn', function () {
     if (get_field('contact_emily', 'options')) {
         return '<a href="tel:' . parse_phone(get_field('contact_emily', 'options')) . '" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Call Emily</a>';
     }
     return;
 });
-add_shortcode('phone_judith_btn', function(){
+add_shortcode('phone_judith_btn', function () {
     if (get_field('contact_judith', 'options')) {
         return '<a href="tel:' . parse_phone(get_field('contact_judith', 'options')) . '" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Call Judith</a>';
     }
     return;
 });
-add_shortcode('email_btn', function(){
+add_shortcode('email_btn', function () {
     if (get_field('contact_email', 'options')) {
         return '<a href="mailto:' . get_field('contact_email', 'options') . '" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> Email Us</a>';
     }
