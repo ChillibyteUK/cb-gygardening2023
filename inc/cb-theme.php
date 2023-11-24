@@ -270,6 +270,35 @@ add_shortcode('email_btn', function () {
     return;
 });
 
+
+function gy_custom_password_form()
+{
+    global $post;
+    $label = 'pwbox-' . (empty($post->ID) ? rand() : $post->ID);
+    $img = wp_get_attachment_image_url(get_field('password_protected_page_hero', 'options'), 'full');
+    $output = '
+    <section class="short-hero d-flex" style="background-image:url(' . $img . ')">
+        <div class="overlay--light"></div>
+        <div class="container-xl d-flex flex-column justify-content-center">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>Staff Portal</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container-xl pb-5">
+        <form action="' . esc_url(site_url('wp-login.php?action=postpass', 'login_post')) . '" class="form-inline post-password-form" method="post">
+            <p>' . __('This content is password protected. To view it please enter your password below:') . '</p>
+            <label for="' . $label . '" class="form-label">' . __('Password:') . '</label>
+            <input name="post_password" id="' . $label . '" type="password" size="20" class="form-control">
+            <button type="submit" name="Submit" class="btn btn-primary">' . esc_attr_x('Enter', 'post password form') . '</button>
+        </form>
+    </div>';
+    return $output;
+}
+add_filter('the_password_form', 'gy_custom_password_form', 99);
+
 // black thumbnails - fix alpha channel
 /**
  * Patch to prevent black PDF backgrounds.

@@ -2665,8 +2665,10 @@ textarea.form-control-lg {
   clip: rect(0, 0, 0, 0);
   pointer-events: none;
 }
-.btn-check[disabled] + .btn, body .gform_wrapper .gform_footer .btn-check[disabled] + button, .fieldset-cf7mls-wrapper .btn-check[disabled] + button,
-.fieldset-cf7mls-wrapper .btn-check[disabled] + .wpcf7-form-control.wpcf7-submit.has-spinner, .btn-check:disabled + .btn, body .gform_wrapper .gform_footer .btn-check:disabled + button, .fieldset-cf7mls-wrapper .btn-check:disabled + button,
+.btn-check[disabled] + .btn, body .gform_wrapper .gform_footer .btn-check[disabled] + button,
+.btn-check[disabled] + .gfield_choice_all_toggle, .fieldset-cf7mls-wrapper .btn-check[disabled] + button,
+.fieldset-cf7mls-wrapper .btn-check[disabled] + .wpcf7-form-control.wpcf7-submit.has-spinner, .btn-check:disabled + .btn, body .gform_wrapper .gform_footer .btn-check:disabled + button,
+.btn-check:disabled + .gfield_choice_all_toggle, .fieldset-cf7mls-wrapper .btn-check:disabled + button,
 .fieldset-cf7mls-wrapper .btn-check:disabled + .wpcf7-form-control.wpcf7-submit.has-spinner {
   pointer-events: none;
   filter: none;
@@ -2917,13 +2919,15 @@ textarea.form-control-lg {
 .gform_wrapper .input-group > select:focus {
   z-index: 3;
 }
-.input-group .btn, .input-group body .gform_wrapper .gform_footer button, body .gform_wrapper .gform_footer .input-group button, .input-group .fieldset-cf7mls-wrapper button, .fieldset-cf7mls-wrapper .input-group button,
+.input-group .btn, .input-group body .gform_wrapper .gform_footer button, body .gform_wrapper .gform_footer .input-group button,
+.input-group .gfield_choice_all_toggle, .input-group .fieldset-cf7mls-wrapper button, .fieldset-cf7mls-wrapper .input-group button,
 .input-group .fieldset-cf7mls-wrapper .wpcf7-form-control.wpcf7-submit.has-spinner,
 .fieldset-cf7mls-wrapper .input-group .wpcf7-form-control.wpcf7-submit.has-spinner {
   position: relative;
   z-index: 2;
 }
-.input-group .btn:focus, .input-group body .gform_wrapper .gform_footer button:focus, body .gform_wrapper .gform_footer .input-group button:focus, .input-group .fieldset-cf7mls-wrapper button:focus, .fieldset-cf7mls-wrapper .input-group button:focus,
+.input-group .btn:focus, .input-group body .gform_wrapper .gform_footer button:focus, body .gform_wrapper .gform_footer .input-group button:focus,
+.input-group .gfield_choice_all_toggle:focus, .input-group .fieldset-cf7mls-wrapper button:focus, .fieldset-cf7mls-wrapper .input-group button:focus,
 .input-group .fieldset-cf7mls-wrapper .wpcf7-form-control.wpcf7-submit.has-spinner:focus,
 .fieldset-cf7mls-wrapper .input-group .wpcf7-form-control.wpcf7-submit.has-spinner:focus {
   z-index: 3;
@@ -2955,6 +2959,7 @@ textarea.form-control-lg {
 .input-group-lg > .input-group-text,
 .input-group-lg > .btn,
 body .gform_wrapper .gform_footer .input-group-lg > button,
+.input-group-lg > .gfield_choice_all_toggle,
 .fieldset-cf7mls-wrapper .input-group-lg > button,
 .fieldset-cf7mls-wrapper .input-group-lg > .wpcf7-form-control.wpcf7-submit.has-spinner {
   padding: 0.5rem 1rem;
@@ -2973,6 +2978,7 @@ body .gform_wrapper .gform_footer .input-group-lg > button,
 .input-group-sm > .input-group-text,
 .input-group-sm > .btn,
 body .gform_wrapper .gform_footer .input-group-sm > button,
+.input-group-sm > .gfield_choice_all_toggle,
 .fieldset-cf7mls-wrapper .input-group-sm > button,
 .fieldset-cf7mls-wrapper .input-group-sm > .wpcf7-form-control.wpcf7-submit.has-spinner {
   padding: 0.25rem 0.5rem;
@@ -5110,7 +5116,8 @@ body .gform_wrapper .gform_footer .input-group-sm > button,
   background-color: currentColor;
   opacity: 0.5;
 }
-.placeholder.btn::before, body .gform_wrapper .gform_footer button.placeholder::before, .fieldset-cf7mls-wrapper button.placeholder::before,
+.placeholder.btn::before, body .gform_wrapper .gform_footer button.placeholder::before,
+.placeholder.gfield_choice_all_toggle::before, .fieldset-cf7mls-wrapper button.placeholder::before,
 .fieldset-cf7mls-wrapper .placeholder.wpcf7-form-control.wpcf7-submit.has-spinner::before {
   display: inline-block;
   content: "";
@@ -20952,7 +20959,7 @@ h1 span, .h1 span, h2 span, .h2 span, h3 span, .h3 span, h4 span, .h4 span, .h99
   position: relative;
   top: 0.5rem;
   left: 1rem;
-  width: 180px;
+  width: 200px;
   aspect-ratio: 3/1;
   background-image: url(../img/gy-gardening-logo--wo.svg);
   background-size: contain;
@@ -21069,7 +21076,8 @@ h1 span, .h1 span, h2 span, .h2 span, h3 span, .h3 span, h4 span, .h4 span, .h99
   font-weight: var(--fw-900);
 }
 
-.btn-primary, body .gform_wrapper .gform_footer button, .fieldset-cf7mls-wrapper button,
+.btn-primary, body .gform_wrapper .gform_footer button,
+.gfield_choice_all_toggle, .fieldset-cf7mls-wrapper button,
 .fieldset-cf7mls-wrapper .wpcf7-form-control.wpcf7-submit.has-spinner {
   background-color: var(--col-primary-400);
   color: white;
@@ -21196,6 +21204,13 @@ form .wpcf7-response-output {
   fieldset.cols-md-3 .gfield_checkbox {
     -moz-columns: 3;
     columns: 3;
+  }
+}
+
+@media (min-width: 992px) {
+  fieldset.cols-md-2 .gfield_checkbox {
+    -moz-columns: 2;
+    columns: 2;
   }
 }
 
@@ -21540,6 +21555,13 @@ form .wpcf7-response-output {
 
 .jobs {
   background-color: var(--col-grey);
+}
+
+.doclist__item {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: min(800px, 90vw);
 }
 
 .divider {

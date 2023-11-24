@@ -42,6 +42,11 @@ fieldset.cols-md-3 .gfield_checkbox {
         columns: 3;
     }
 }
+fieldset.cols-md-2 .gfield_checkbox {
+    @media (min-width:992px) {
+        columns: 2;
+    }
+}
 
 
 .form-control {
@@ -105,7 +110,8 @@ fieldset.cols-md-3 .gfield_checkbox {
 // body .gform_wrapper .gform_body .gform_fields 
 .gfield textarea.large { height: 200px !important; }
 
-body .gform_wrapper .gform_footer button {
+body .gform_wrapper .gform_footer button,
+.gfield_choice_all_toggle {
     @extend .btn;
     @extend .btn-primary;
 }
