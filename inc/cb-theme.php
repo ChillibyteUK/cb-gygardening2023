@@ -13,7 +13,8 @@ require_once CB_THEME_DIR . '/inc/cb-blocks.php';
 remove_action('wp_enqueue_scripts', 'wp_enqueue_global_styles');
 remove_action('wp_body_open', 'wp_global_styles_render_svg_filters');
 
-
+// disable theme/plugin file editor
+define('DISALLOW_FILE_EDIT', true);
 
 // Remove comment-reply.min.js from footer
 function remove_comment_reply_header_hook()
@@ -238,36 +239,65 @@ add_action('wp_enqueue_scripts', 'cb_theme_enqueue');
 
 
 
-add_shortcode('phone_emily', function(){
+add_shortcode('phone_emily', function () {
     if (get_field('contact_emily', 'options')) {
         return '<a href="tel:' . parse_phone(get_field('contact_emily', 'options')) . '">' . get_field('contact_emily', 'options') . '</a>';
     }
     return;
 });
-add_shortcode('phone_judith', function(){
+add_shortcode('phone_judith', function () {
     if (get_field('contact_judith', 'options')) {
         return '<a href="tel:' . parse_phone(get_field('contact_judith', 'options')) . '">' . get_field('contact_judith', 'options') . '</a>';
     }
     return;
 });
-add_shortcode('phone_emily_btn', function(){
+add_shortcode('phone_emily_btn', function () {
     if (get_field('contact_emily', 'options')) {
         return '<a href="tel:' . parse_phone(get_field('contact_emily', 'options')) . '" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Call Emily</a>';
     }
     return;
 });
-add_shortcode('phone_judith_btn', function(){
+add_shortcode('phone_judith_btn', function () {
     if (get_field('contact_judith', 'options')) {
         return '<a href="tel:' . parse_phone(get_field('contact_judith', 'options')) . '" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Call Judith</a>';
     }
     return;
 });
-add_shortcode('email_btn', function(){
+add_shortcode('email_btn', function () {
     if (get_field('contact_email', 'options')) {
         return '<a href="mailto:' . get_field('contact_email', 'options') . '" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> Email Us</a>';
     }
     return;
 });
+
+
+function gy_custom_password_form()
+{
+    global $post;
+    $label = 'pwbox-' . (empty($post->ID) ? rand() : $post->ID);
+    $img = wp_get_attachment_image_url(get_field('password_protected_page_hero', 'options'), 'full');
+    $output = '
+    <section class="short-hero d-flex" style="background-image:url(' . $img . ')">
+        <div class="overlay--light"></div>
+        <div class="container-xl d-flex flex-column justify-content-center">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>Staff Portal</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container-xl pb-5">
+        <form action="' . esc_url(site_url('wp-login.php?action=postpass', 'login_post')) . '" class="form-inline post-password-form" method="post">
+            <p>' . __('This content is password protected. To view it please enter your password below:') . '</p>
+            <label for="' . $label . '" class="form-label">' . __('Password:') . '</label>
+            <input name="post_password" id="' . $label . '" type="password" size="20" class="form-control">
+            <button type="submit" name="Submit" class="btn btn-primary">' . esc_attr_x('Enter', 'post password form') . '</button>
+        </form>
+    </div>';
+    return $output;
+}
+add_filter('the_password_form', 'gy_custom_password_form', 99);
 
 // black thumbnails - fix alpha channel
 /**

@@ -2665,8 +2665,10 @@ textarea.form-control-lg {
   clip: rect(0, 0, 0, 0);
   pointer-events: none;
 }
-.btn-check[disabled] + .btn, body .gform_wrapper .gform_footer .btn-check[disabled] + button, .fieldset-cf7mls-wrapper .btn-check[disabled] + button,
-.fieldset-cf7mls-wrapper .btn-check[disabled] + .wpcf7-form-control.wpcf7-submit.has-spinner, .btn-check:disabled + .btn, body .gform_wrapper .gform_footer .btn-check:disabled + button, .fieldset-cf7mls-wrapper .btn-check:disabled + button,
+.btn-check[disabled] + .btn, body .gform_wrapper .gform_footer .btn-check[disabled] + button,
+.btn-check[disabled] + .gfield_choice_all_toggle, .fieldset-cf7mls-wrapper .btn-check[disabled] + button,
+.fieldset-cf7mls-wrapper .btn-check[disabled] + .wpcf7-form-control.wpcf7-submit.has-spinner, .btn-check:disabled + .btn, body .gform_wrapper .gform_footer .btn-check:disabled + button,
+.btn-check:disabled + .gfield_choice_all_toggle, .fieldset-cf7mls-wrapper .btn-check:disabled + button,
 .fieldset-cf7mls-wrapper .btn-check:disabled + .wpcf7-form-control.wpcf7-submit.has-spinner {
   pointer-events: none;
   filter: none;
@@ -2917,13 +2919,15 @@ textarea.form-control-lg {
 .gform_wrapper .input-group > select:focus {
   z-index: 3;
 }
-.input-group .btn, .input-group body .gform_wrapper .gform_footer button, body .gform_wrapper .gform_footer .input-group button, .input-group .fieldset-cf7mls-wrapper button, .fieldset-cf7mls-wrapper .input-group button,
+.input-group .btn, .input-group body .gform_wrapper .gform_footer button, body .gform_wrapper .gform_footer .input-group button,
+.input-group .gfield_choice_all_toggle, .input-group .fieldset-cf7mls-wrapper button, .fieldset-cf7mls-wrapper .input-group button,
 .input-group .fieldset-cf7mls-wrapper .wpcf7-form-control.wpcf7-submit.has-spinner,
 .fieldset-cf7mls-wrapper .input-group .wpcf7-form-control.wpcf7-submit.has-spinner {
   position: relative;
   z-index: 2;
 }
-.input-group .btn:focus, .input-group body .gform_wrapper .gform_footer button:focus, body .gform_wrapper .gform_footer .input-group button:focus, .input-group .fieldset-cf7mls-wrapper button:focus, .fieldset-cf7mls-wrapper .input-group button:focus,
+.input-group .btn:focus, .input-group body .gform_wrapper .gform_footer button:focus, body .gform_wrapper .gform_footer .input-group button:focus,
+.input-group .gfield_choice_all_toggle:focus, .input-group .fieldset-cf7mls-wrapper button:focus, .fieldset-cf7mls-wrapper .input-group button:focus,
 .input-group .fieldset-cf7mls-wrapper .wpcf7-form-control.wpcf7-submit.has-spinner:focus,
 .fieldset-cf7mls-wrapper .input-group .wpcf7-form-control.wpcf7-submit.has-spinner:focus {
   z-index: 3;
@@ -2955,6 +2959,7 @@ textarea.form-control-lg {
 .input-group-lg > .input-group-text,
 .input-group-lg > .btn,
 body .gform_wrapper .gform_footer .input-group-lg > button,
+.input-group-lg > .gfield_choice_all_toggle,
 .fieldset-cf7mls-wrapper .input-group-lg > button,
 .fieldset-cf7mls-wrapper .input-group-lg > .wpcf7-form-control.wpcf7-submit.has-spinner {
   padding: 0.5rem 1rem;
@@ -2973,6 +2978,7 @@ body .gform_wrapper .gform_footer .input-group-lg > button,
 .input-group-sm > .input-group-text,
 .input-group-sm > .btn,
 body .gform_wrapper .gform_footer .input-group-sm > button,
+.input-group-sm > .gfield_choice_all_toggle,
 .fieldset-cf7mls-wrapper .input-group-sm > button,
 .fieldset-cf7mls-wrapper .input-group-sm > .wpcf7-form-control.wpcf7-submit.has-spinner {
   padding: 0.25rem 0.5rem;
@@ -5110,7 +5116,8 @@ body .gform_wrapper .gform_footer .input-group-sm > button,
   background-color: currentColor;
   opacity: 0.5;
 }
-.placeholder.btn::before, body .gform_wrapper .gform_footer button.placeholder::before, .fieldset-cf7mls-wrapper button.placeholder::before,
+.placeholder.btn::before, body .gform_wrapper .gform_footer button.placeholder::before,
+.placeholder.gfield_choice_all_toggle::before, .fieldset-cf7mls-wrapper button.placeholder::before,
 .fieldset-cf7mls-wrapper .placeholder.wpcf7-form-control.wpcf7-submit.has-spinner::before {
   display: inline-block;
   content: "";
@@ -20900,6 +20907,13 @@ h1 span, .h1 span, h2 span, .h2 span, h3 span, .h3 span, h4 span, .h4 span, .h99
   background-position: center;
 }
 
+.has-bg--light-wo {
+  background-image: url(../img/flower-bg--wo.svg);
+  background-repeat: repeat;
+  background-size: 75%;
+  background-position: center;
+}
+
 .has-bg--light-sm {
   background-image: url(../img/flower-bg.svg);
   background-repeat: repeat;
@@ -20912,14 +20926,21 @@ h1 span, .h1 span, h2 span, .h2 span, h3 span, .h3 span, h4 span, .h4 span, .h99
   z-index: 9999;
   top: 0;
   right: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row-reverse;
+  transition: transform var(--transition);
 }
 #wrapperNavbar .navbar {
   padding: 0;
 }
 #wrapperNavbar button.menu {
-  background-color: white;
+  background-color: #ffffffcc;
   color: var(--col-primary-400);
   border: none;
+  border-bottom-left-radius: 0.1rem;
   text-transform: uppercase;
   padding: 0.5rem 1rem;
   z-index: 9999;
@@ -20930,13 +20951,18 @@ h1 span, .h1 span, h2 span, .h2 span, h3 span, .h3 span, h4 span, .h4 span, .h99
 #wrapperNavbar .offcanvas-body .nav-link {
   color: var(--col-primary-400);
 }
+#wrapperNavbar.hide {
+  transform: translateY(-100px);
+}
 
 .gylogo {
-  position: fixed;
-  top: 1rem;
+  position: relative;
+  top: 0.5rem;
   left: 1rem;
-  width: 180px;
-  z-index: 9999;
+  width: 200px;
+  aspect-ratio: 3/1;
+  background-image: url(../img/gy-gardening-logo--wo.svg);
+  background-size: contain;
   filter: drop-shadow(0 0 0.5px #444);
 }
 
@@ -21050,7 +21076,8 @@ h1 span, .h1 span, h2 span, .h2 span, h3 span, .h3 span, h4 span, .h4 span, .h99
   font-weight: var(--fw-900);
 }
 
-.btn-primary, body .gform_wrapper .gform_footer button, .fieldset-cf7mls-wrapper button,
+.btn-primary, body .gform_wrapper .gform_footer button,
+.gfield_choice_all_toggle, .fieldset-cf7mls-wrapper button,
 .fieldset-cf7mls-wrapper .wpcf7-form-control.wpcf7-submit.has-spinner {
   background-color: var(--col-primary-400);
   color: white;
@@ -21105,80 +21132,6 @@ h1 span, .h1 span, h2 span, .h2 span, h3 span, .h3 span, h4 span, .h4 span, .h99
     }
 }
 */
-.deal {
-  text-align: center;
-  border: 10px solid var(--col-primary-400);
-  padding: 1rem;
-  height: 100%;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-}
-.deal__disclaimer {
-  font-size: var(--fs-100);
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-}
-.deal__logo {
-  margin-bottom: 0.5rem;
-  width: 80px;
-  height: 80px;
-}
-.deal__intro {
-  font-size: var(--fs-200);
-  text-transform: uppercase;
-  margin-bottom: 0.25rem;
-}
-.deal__title {
-  text-transform: uppercase;
-  font-weight: var(--fw-700);
-  font-size: var(--fs-300);
-  padding-block: 0.5rem;
-}
-.deal__value {
-  font-weight: var(--fw-700);
-  font-size: var(--fs-500);
-  color: var(--col-primary-400);
-  margin-bottom: 0.5rem;
-}
-.deal__description_pre {
-  font-size: var(--fs-200);
-  text-transform: uppercase;
-  margin-bottom: 0.25rem;
-}
-.deal__description {
-  font-size: var(--fs-300);
-  font-weight: var(--fw-700);
-  margin-bottom: 0.5rem;
-}
-.deal__finance_pre {
-  font-size: var(--fs-200);
-  text-transform: uppercase;
-  margin-bottom: 0.25rem;
-}
-.deal__finance {
-  text-transform: uppercase;
-  font-weight: var(--fw-700);
-  font-size: var(--fs-300);
-  margin-bottom: 0.5rem;
-}
-.deal__date {
-  font-size: var(--fs-200);
-}
-@media (max-width: 992px) {
-  .deal__sidebar {
-    padding-bottom: 1rem;
-    border-bottom: 2px solid var(--col-primary-400);
-  }
-}
-@media (min-width: 992px) {
-  .deal__sidebar {
-    position: -webkit-sticky;
-    position: sticky;
-    top: var(--h-top);
-    border-right: 2px solid var(--col-primary-400);
-  }
-}
-
 .blog__image {
   aspect-ratio: 16/9;
   -o-object-fit: cover;
@@ -21254,6 +21207,13 @@ form .wpcf7-response-output {
   }
 }
 
+@media (min-width: 992px) {
+  fieldset.cols-md-2 .gfield_checkbox {
+    -moz-columns: 2;
+    columns: 2;
+  }
+}
+
 .form-control, .gform_wrapper.gravity-theme input[type=text],
 .gform_wrapper.gravity-theme input[type=email],
 .gform_wrapper.gravity-theme input[type=tel],
@@ -21297,12 +21257,12 @@ form .wpcf7-response-output {
   position: relative;
   isolation: isolate;
   color: #fff;
+  display: grid;
+  place-content: center;
 }
 .full-hero__inner {
-  position: absolute;
-  display: flex;
-  inset: 0;
-  z-index: 0;
+  width: min(800px, 90vw);
+  padding-top: 4rem;
 }
 .full-hero img {
   margin-bottom: 2rem;
@@ -21312,7 +21272,7 @@ form .wpcf7-response-output {
 }
 .full-hero h1, .full-hero .h1 {
   color: #fff;
-  font-size: var(--fs-900);
+  font-size: var(--fs-800);
   font-weight: var(--fw-400);
   font-family: var(--ff-body);
   line-height: 1.1;
@@ -21320,29 +21280,24 @@ form .wpcf7-response-output {
   text-wrap: balance;
   margin-bottom: 1rem;
 }
-.full-hero .badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: space-around;
-}
-.full-hero .badges img {
+.full-hero .badges__badge img {
   max-width: 140px;
 }
 .full-hero .carousel {
   z-index: -1;
+  position: absolute;
+  inset: 0;
 }
 .full-hero .carousel, .full-hero .carousel-inner {
   min-height: 100vh;
+  height: 100%;
 }
 .full-hero .carousel-item {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   min-height: 100vh;
-}
-.full-hero .slick-slide div {
-  text-align: center;
+  height: 100%;
 }
 
 .short-hero {
@@ -21520,12 +21475,6 @@ form .wpcf7-response-output {
   font-size: 1.2rem;
 }
 
-.news .latest_news__grid,
-.latest_news .latest_news__grid,
-.jobs .latest_news__grid {
-  display: grid;
-  gap: 1rem;
-}
 .news .news__grid,
 .latest_news .news__grid,
 .jobs .news__grid {
@@ -21539,11 +21488,6 @@ form .wpcf7-response-output {
   gap: 1rem;
 }
 @media (min-width: 992px) {
-  .news .latest_news__grid,
-.latest_news .latest_news__grid,
-.jobs .latest_news__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
   .news .news__grid,
 .latest_news .news__grid,
 .jobs .news__grid {
@@ -21560,6 +21504,7 @@ form .wpcf7-response-output {
 .jobs__card {
   background-color: var(--col-grey);
   color: var(--body-color);
+  display: block;
 }
 .news__card img,
 .latest_news__card img,
@@ -21610,6 +21555,23 @@ form .wpcf7-response-output {
 
 .jobs {
   background-color: var(--col-grey);
+}
+
+.doclist__item {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: min(800px, 90vw);
+}
+
+.divider {
+  aspect-ratio: 50/1;
+  width: 75%;
+  margin-inline: auto;
+  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_2' data-name='Layer 2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 196.36 4.02'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill-rule: evenodd; %7D .cls-1, .cls-2 %7B fill: %2300988880; stroke-width: 0px; %7D %3C/style%3E%3C/defs%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cg%3E%3Cpath class='cls-1' d='m97.96,1.6c-.51-.28-1.38-1.71-.43-1.31.51-.99.74.81.6,1.28-.07-.07-.1-.26-.21-.31-.06.09.04.26.03.34Z'/%3E%3Cpath class='cls-1' d='m98.31,1.54c-.19-.56.21-2.19.6-1.24,1.06-.32-.03,1.1-.47,1.32,0-.1.1-.24.07-.38-.09.04-.12.24-.21.29Z'/%3E%3Cpath class='cls-1' d='m98.59,1.76c.28-.51,1.71-1.38,1.31-.43.97.51-.81.74-1.28.59.09-.07.26-.1.31-.21-.07-.04-.25.06-.34.04Z'/%3E%3Cpath class='cls-1' d='m98.65,2.1c.57-.18,2.19.26,1.22.63.31,1.07-1.1-.06-1.31-.5.1,0,.24.1.37.07-.04-.07-.24-.13-.28-.21Z'/%3E%3Cpath class='cls-1' d='m98.46,2.42c.51.28,1.37,1.72.41,1.31-.53.97-.74-.81-.57-1.29.07.09.1.26.21.31.04-.07-.07-.25-.04-.32Z'/%3E%3Cpath class='cls-1' d='m98.08,2.48c.18.56-.22,2.19-.62,1.22-1.06.32.03-1.1.49-1.32,0,.1-.1.24-.07.38.09-.01.12-.21.21-.28Z'/%3E%3Cpath class='cls-1' d='m97.77,2.26c-.28.51-1.71,1.38-1.31.41-.97-.53.81-.74,1.28-.59-.09.07-.26.1-.31.21.07.06.25-.04.34-.03Z'/%3E%3Cpath class='cls-1' d='m97.75,1.88c-.57.16-2.18-.28-1.22-.66-.29-1.07,1.1.07,1.31.51-.1,0-.24-.1-.37-.07.01.1.22.16.28.22Z'/%3E%3Cpath class='cls-1' d='m98.37,1.73c.13.09.19.28.1.43-.09.13-.28.19-.43.1-.13-.09-.19-.28-.1-.43s.28-.19.43-.1Z'/%3E%3C/g%3E%3Cg%3E%3Cpath class='cls-2' d='m103.69,2.01c29.68-.14,62.98-.14,92.67,0-29.68.14-62.98.14-92.67,0h0Z'/%3E%3Cpath class='cls-2' d='m0,2.01c29.68-.14,62.98-.14,92.67,0-29.68.14-62.98.14-92.67,0h0Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .wp-block-quote--cb {

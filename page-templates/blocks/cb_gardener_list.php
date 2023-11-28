@@ -18,15 +18,17 @@ $q = new WP_Query(array(
         while($q->have_posts()) {
             $q->the_post();
             ?>
-            <div class="gardener_list__card">
-                <img src="<?=get_the_post_thumbnail_url($q->ID,'full')?>" alt="<?=get_the_title()?>">
-                <div>
-                    <h3><?=get_the_title()?></h3>
-                    <?=get_the_content()?>
-                </div>
+        <div class="gardener_list__card">
+            <img src="<?=get_the_post_thumbnail_url($q->ID, 'full')?>"
+                alt="<?=get_the_title()?>">
+            <div>
+                <h3><?=get_the_title()?></h3>
+                <?=get_the_content()?>
             </div>
-            <?php
+        </div>
+        <div class="divider mb-5"></div>
+        <?php
         }
-        ?>
+?>
     </div>
 </section>
