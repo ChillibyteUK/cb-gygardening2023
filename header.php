@@ -135,11 +135,11 @@ do_action('wp_body_open');
                 </div>
             </div>
         </nav>
-    </div>
-<?php
-if (!is_front_page()) {
-    ?>
-<a class="gylogo" href="/"><img src="<?=get_stylesheet_directory_uri()?>/img/gy-gardening-logo--wo.svg" alt="Home"></a>
     <?php
-}
-?>
+    if (!is_front_page()) {
+        ?>
+    <a class="gylogo" href="/"><img src="<?=get_stylesheet_directory_uri()?>/img/gy-gardening-logo--wo.svg" alt="Home"></a>
+        <?php
+    }
+    ?>
+    </div>
