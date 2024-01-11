@@ -13,11 +13,11 @@ defined('ABSPATH') || exit;
             <div class="col-sm-6 col-lg-3 mb-2 order-3 order-lg-2">
                 <div class="footer__title">Contact</div>
                 <ul>
+                    <li><a href="mailto:<?= get_field('contact_email', 'options') ?>"><?= get_field('contact_email', 'options') ?></a>
+                    </li>
                     <li>Jude: <a href="tel:<?= parse_phone(get_field('contact_judith', 'options')) ?>"><?= get_field('contact_judith', 'options') ?></a>
                     </li>
                     <li>Emily: <a href="tel:<?= parse_phone(get_field('contact_emily', 'options')) ?>"><?= get_field('contact_emily', 'options') ?></a>
-                    </li>
-                    <li><a href="mailto:<?= get_field('contact_email', 'options') ?>"><?= get_field('contact_email', 'options') ?></a>
                     </li>
                 </ul>
                 <div class="footer__socials">
