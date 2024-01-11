@@ -64,7 +64,7 @@ while ($j->have_posts()) {
                             alt="<?=get_the_title()?>">
                         <div class="latest_news__inner">
                             <div class="latest_news__excerpt mb-3">
-                                <?=wp_trim_words(get_the_content(null, false, get_the_ID()), 30)?>
+                                <?=wp_trim_words(get_the_content(null, false, get_the_ID()), 28)?>
                             </div>
                             <div class="text-center">
                                 <span class="btn btn-primary">Read More</span>
