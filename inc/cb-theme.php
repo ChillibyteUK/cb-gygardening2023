@@ -259,7 +259,7 @@ add_shortcode('phone_emily_btn', function () {
 });
 add_shortcode('phone_judith_btn', function () {
     if (get_field('contact_judith', 'options')) {
-        return '<a href="tel:' . parse_phone(get_field('contact_judith', 'options')) . '" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Call Judith</a>';
+        return '<a href="tel:' . parse_phone(get_field('contact_judith', 'options')) . '" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Call Jude</a>';
     }
     return;
 });

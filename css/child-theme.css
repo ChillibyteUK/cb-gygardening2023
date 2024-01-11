@@ -21086,6 +21086,8 @@ h1 span, .h1 span, h2 span, .h2 span, h3 span, .h3 span, h4 span, .h4 span, .h99
   text-transform: uppercase;
   font-size: var(--fs-300);
   font-weight: var(--fw-900);
+  min-width: 240px;
+  text-align: center;
 }
 
 /*

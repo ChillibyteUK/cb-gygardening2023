@@ -7,7 +7,7 @@
                     <li class="mb-2"><span class="fa-li"><i class="fa-solid fa-envelope"></i></span> <a
                             href="mailto:<?=get_field('contact_email', 'options')?>"><?=get_field('contact_email', 'options')?></a>
                     </li>
-                    <li class="mb-2"><span class="fa-li"><i class="fa-solid fa-phone"></i></span>  Judith: <a
+                    <li class="mb-2"><span class="fa-li"><i class="fa-solid fa-phone"></i></span>  Jude: <a
                     href="tel:<?=parse_phone(get_field('contact_judith', 'options'))?>"><?=get_field('contact_judith', 'options')?></a>
                     </li>
                     <li class="mb-2"><span class="fa-li"><i class="fa-solid fa-phone"></i></span> Emily: <a
