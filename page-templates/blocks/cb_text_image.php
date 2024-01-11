@@ -42,7 +42,7 @@ if (get_field('order') == 'image-text') {
                 <?php
                 }
                 ?>
-                <div class="py-4"><?= get_field('content') ?></div>
+                <div class="pb-4"><?= get_field('content') ?></div>
                 <?php
                 if (get_field('cta')) {
                     $link = get_field('cta');
