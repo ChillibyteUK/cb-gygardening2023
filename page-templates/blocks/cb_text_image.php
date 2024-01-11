@@ -1,5 +1,5 @@
 <?php
-$classes = $block['className'] ?? null;
+$classes = $block['className'] ?? 'py-5';
 
 $bg = $block['backgroundColor'] ?? null;
 if ($bg != '') {
@@ -22,24 +22,38 @@ if (get_field('order') == 'image-text') {
     $orderImage = 'order-1 order-md-1';
 }
 ?>
-<section class="text_image <?=$bg?> <?=$classes?>">
-    <div class="container-xl py-5">
-        <div class="d-lg-none"><h2><?=get_field('title')?></h2></div>
+<section class="text_image <?= $bg ?> <?= $classes ?>">
+    <div class="container-xl">
+        <?php
+        if (get_field('title')) {
+        ?>
+            <div class="d-lg-none">
+                <h2><?= get_field('title') ?></h2>
+            </div>
+        <?php
+        }
+        ?>
         <div class="row align-items-center g-4">
-            <div class="<?=$splitText?> <?=$orderText?>">
-                <h2 class="d-none d-lg-block"><?=get_field('title')?></h2>
-                <div class="py-4"><?=get_field('content')?></div>
+            <div class="<?= $splitText ?> <?= $orderText ?>">
+                <?php
+                if (get_field('title')) {
+                ?>
+                    <h2 class="d-none d-lg-block"><?= get_field('title') ?></h2>
+                <?php
+                }
+                ?>
+                <div class="py-4"><?= get_field('content') ?></div>
                 <?php
                 if (get_field('cta')) {
                     $link = get_field('cta');
-                    ?>
-                    <a href="<?=$link['url']?>" target="<?=$link['target']?>" class="btn btn-primary"><?=$link['title']?></a>
-                    <?php
+                ?>
+                    <a href="<?= $link['url'] ?>" target="<?= $link['target'] ?>" class="btn btn-primary"><?= $link['title'] ?></a>
+                <?php
                 }
                 ?>
             </div>
-            <div class="<?=$splitImage?> <?=$orderImage?> text-center">
-                <?=wp_get_attachment_image(get_field('image'), 'large', null, array('class' => 'text_image__image'))?>
+            <div class="<?= $splitImage ?> <?= $orderImage ?> text-center">
+                <?= wp_get_attachment_image(get_field('image'), 'large', null, array('class' => 'text_image__image')) ?>
             </div>
         </div>
     </div>
