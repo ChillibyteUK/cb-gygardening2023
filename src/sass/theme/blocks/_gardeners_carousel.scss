@@ -1,6 +1,7 @@
 .gardener_carousel {
     &__card {
         padding: 0.5rem;
+        width: 195px !important;
         img {
             border-radius: 100vw;
             border: 0.5rem solid var(--col-grey);
@@ -12,11 +13,20 @@
         text-transform: uppercase;
         font-size: var(--fs-300);
     }
-    .slick-slider {
+    &__carousel {
         display: flex;
-        margin-bottom: 1rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
     }
-    .slick-arrow {
-        cursor: pointer;
-    }
+    // .slick-slider {
+    //     display: flex;
+    // //     display: grid;
+    // // grid-template-columns: 64px auto 64px;
+    // // place-content: center;
+    //     margin-bottom: 1rem;
+    // }
+    // .slick-arrow {
+    //     cursor: pointer;
+    // }
 }

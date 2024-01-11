@@ -2,12 +2,32 @@
 
 $classes = $block['className'] ?? null;
 
-$q = new WP_Query(array(
-    'post_type' => 'gardener',
-    'posts_per_page' => -1,
-    'orderby' => 'title',
-    'order' => 'ASC'
-));
+if (get_field('location') ?? null) {
+    // cbdump(get_field('location'));
+    $locas = get_field('location');
+    $q = new WP_Query(array(
+        'post_type' => 'gardener',
+        'posts_per_page' => -1,
+        'orderby' => 'rand',
+        'order' => 'ASC',
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'location',
+                'field' => 'id',
+                'terms' => $locas,
+                'operator' => 'IN',
+            )
+        )
+    ));
+}
+else {
+    $q = new WP_Query(array(
+        'post_type' => 'gardener',
+        'posts_per_page' => -1,
+        'orderby' => 'rand',
+        'order' => 'ASC'
+    ));
+}
 ?>
 <section class="gardener_carousel py-5 <?=$classes?>">
     <div class="container-xl">
@@ -46,6 +66,7 @@ $q = new WP_Query(array(
     </div>
 </section>
 <?php
+/*
 add_action('wp_footer', function () {
     ?>
 <script>
@@ -85,3 +106,4 @@ add_action('wp_footer', function () {
 </script>
 <?php
 });
+*/

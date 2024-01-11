@@ -5,7 +5,7 @@ $classes = $block['className'] ?? null;
 $q = new WP_Query(array(
     'post_type' => 'gardener',
     'posts_per_page' => -1,
-    'orderby' => 'title',
+    'orderby' => 'rand',
     'order' => 'ASC'
 ));
 ?>

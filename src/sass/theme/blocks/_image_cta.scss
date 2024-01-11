@@ -6,6 +6,12 @@
     color: #fff;
     position: relative;
     isolation: isolate;
+    &__inner {
+        width: max-content;
+        margin-inline: auto;
+        position: relative;
+        padding: 2rem;
+    }
     &__title {
         font-size: var(--fs-900);
         color: #fff;

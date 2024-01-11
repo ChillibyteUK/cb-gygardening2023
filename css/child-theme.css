@@ -21167,6 +21167,12 @@ h1 span, .h1 span, h2 span, .h2 span, h3 span, .h3 span, h4 span, .h4 span, .h99
   padding-top: 4rem;
 }
 
+.related {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 4rem;
+}
+
 .fieldset-cf7mls-wrapper p {
   display: none;
 }
@@ -21263,6 +21269,8 @@ form .wpcf7-response-output {
 .full-hero__inner {
   width: min(800px, 90vw);
   padding-top: 4rem;
+  padding: 2rem;
+  position: relative;
 }
 .full-hero img {
   margin-bottom: 2rem;
@@ -21322,6 +21330,7 @@ form .wpcf7-response-output {
 
 .gardener_carousel__card {
   padding: 0.5rem;
+  width: 195px !important;
 }
 .gardener_carousel__card img {
   border-radius: 100vw;
@@ -21333,12 +21342,11 @@ form .wpcf7-response-output {
   text-transform: uppercase;
   font-size: var(--fs-300);
 }
-.gardener_carousel .slick-slider {
+.gardener_carousel__carousel {
   display: flex;
-  margin-bottom: 1rem;
-}
-.gardener_carousel .slick-arrow {
-  cursor: pointer;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
 }
 
 .image_cta {
@@ -21349,6 +21357,14 @@ form .wpcf7-response-output {
   color: #fff;
   position: relative;
   isolation: isolate;
+}
+.image_cta__inner {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin-inline: auto;
+  position: relative;
+  padding: 2rem;
 }
 .image_cta__title {
   font-size: var(--fs-900);
@@ -21718,8 +21734,10 @@ a.anchor {
 .overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: -1;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
 }
 
 .overlay--light {
@@ -21728,6 +21746,8 @@ a.anchor {
   background-color: rgba(0, 0, 0, 0.3);
   z-index: -1;
   transition: opacity var(--transition);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
 }
 
 /*

@@ -33,7 +33,7 @@ if (get_field('order') == 'image-text') {
                 if (get_field('cta')) {
                     $link = get_field('cta');
                     ?>
-                    <a href="<?=$link['url']?>" class="btn btn-primary"><?=$link['title']?></a>
+                    <a href="<?=$link['url']?>" target="<?=$link['target']?>" class="btn btn-primary"><?=$link['title']?></a>
                     <?php
                 }
                 ?>

@@ -3,8 +3,9 @@ $class = $block['className'] ?? null;
 ?>
 <section class="full-hero">
     <div id="carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <?php
+        /*
         <div class="carousel-indicators">
-            <?php
             $l = count(get_field('slides'));
 $active = 'active';
 for ($i = 0; $i < $l; $i++) {
@@ -16,8 +17,9 @@ for ($i = 0; $i < $l; $i++) {
             <?php
     $active = '';
 }
+</div>
+*/
 ?>
-        </div>
         <div class="carousel-inner">
             <?php
 $active = 'active';
@@ -32,8 +34,8 @@ foreach (get_field('slides') as $s) {
 ?>
         </div>
     </div>
-    <div class="overlay"></div>
     <div class="full-hero__inner">
+        <div class="overlay"></div>
         <img src="<?=get_stylesheet_directory_uri()?>/img/gy-gardening-logo--wo.svg"
             alt="">
         <h1 class="text-center">
