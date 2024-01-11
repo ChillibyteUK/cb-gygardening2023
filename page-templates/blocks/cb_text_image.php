@@ -1,6 +1,8 @@
 <?php
 $classes = $block['className'] ?? 'py-5';
 
+$inner = $classes == 'py-5' ? 'py-4' : 'pb-4';
+
 $bg = $block['backgroundColor'] ?? null;
 if ($bg != '') {
     $bg = $bg . '-background-color';
@@ -42,7 +44,7 @@ if (get_field('order') == 'image-text') {
                 <?php
                 }
                 ?>
-                <div class="pb-4"><?= get_field('content') ?></div>
+                <div class="<?=$inner?>"><?= get_field('content') ?></div>
                 <?php
                 if (get_field('cta')) {
                     $link = get_field('cta');
