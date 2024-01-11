@@ -60,6 +60,11 @@ foreach (get_field('slides') as $s) {
                 target="<?=$a['target']?>"><?=$a['title']?></a>
             <?php
     }
+    ?>
+    <a href="https://www.inspiredearthdesign.co.uk/"
+        class="btn btn-white"
+        target="_blank">Garden Design</a>
+    <?php
     if (get_field('cta_2')) {
         $a = get_field('cta_2');
         ?>
