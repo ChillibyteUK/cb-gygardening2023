@@ -21067,6 +21067,12 @@ h1 span, .h1 span, h2 span, .h2 span, h3 span, .h3 span, h4 span, .h4 span, .h99
   opacity: 0.8;
 }
 
+.btn, body .gform_wrapper .gform_footer button,
+.gfield_choice_all_toggle, .fieldset-cf7mls-wrapper button,
+.fieldset-cf7mls-wrapper .wpcf7-form-control.wpcf7-submit.has-spinner {
+  display: inline-block;
+}
+
 .btn-white {
   background-color: #ffffff;
   padding: 0.5rem 1.5rem;
