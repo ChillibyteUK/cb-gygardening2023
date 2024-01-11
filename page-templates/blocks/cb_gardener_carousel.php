@@ -28,6 +28,7 @@ else {
         'order' => 'ASC'
     ));
 }
+if ($q->have_posts()) {
 ?>
 <section class="gardener_carousel py-5 <?=$classes?>">
     <div class="container-xl">
@@ -66,6 +67,7 @@ else {
     </div>
 </section>
 <?php
+}
 /*
 add_action('wp_footer', function () {
     ?>
