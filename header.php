@@ -27,6 +27,8 @@ session_start();
     <link rel="preload"
         href="<?=get_stylesheet_directory_uri()?>/fonts/playfair-display-v36-latin-regular.woff2"
         as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="icon" href="<?=get_stylesheet_directory_uri()?>/img/favicon.png" type="image/png">
+
     <?php
 if (get_field('ga_property', 'options')) {
     ?>
