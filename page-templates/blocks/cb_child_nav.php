@@ -21,7 +21,7 @@ if ($children->have_posts()) {
         $blocks = parse_blocks(get_the_content(null, false, get_the_ID()));
         foreach ($blocks as $b) {
             if ($b['blockName'] == 'acf/cb-short-hero') {
-                $bg = wp_get_attachment_image_url($b['attrs']['data']['background'],'large');
+                $bg = wp_get_attachment_image_url($b['attrs']['data']['background'], 'large');
                 break;
             }
             continue;
@@ -29,9 +29,12 @@ if ($children->have_posts()) {
 
         ?>
             <a class="child_nav__card"
-                href="<?=get_the_permalink()?>" style="background-image:url(<?=$bg?>)">
-                <div class="overlay--light"></div>
-                <div class="child_nav__title"><?=get_the_title()?></div>
+                href="<?=get_the_permalink()?>"
+                style="background-image:url(<?=$bg?>)">
+                <div class="child_nav__title">
+                    <div class="overlay--light"></div>
+                    <?=get_the_title()?>
+                </div>
             </a>
             <?php
     }

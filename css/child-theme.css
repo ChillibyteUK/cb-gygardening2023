@@ -21426,6 +21426,8 @@ form .wpcf7-response-output {
   isolation: isolate;
   display: grid;
   place-content: center;
+  position: relative;
+  padding: 0.5rem 1rem;
 }
 .child_nav__card:hover .overlay--light {
   opacity: 0.4;
