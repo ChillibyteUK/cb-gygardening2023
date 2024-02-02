@@ -1,5 +1,5 @@
 <?php
-$f = get_the_post_thumbnail_url(get_the_ID(), 'full');
+$f = get_the_post_thumbnail_url(get_the_ID(), 'full') ?: 'NOPE';
 $img = wp_get_attachment_image_url(get_field('background'), 'full') ?: $f;
 $class = $block['className'] ?? null;
 ?>
