@@ -21754,7 +21754,7 @@ a.anchor {
 .overlay--light {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(78, 87, 60, 0.3);
   z-index: -1;
   transition: opacity var(--transition);
   -webkit-backdrop-filter: blur(2px);

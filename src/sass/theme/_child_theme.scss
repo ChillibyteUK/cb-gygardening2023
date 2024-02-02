@@ -173,7 +173,7 @@ a.anchor {
 .overlay--light {
     position: absolute;
     inset: 0;
-    background-color: hsl(0 0% 0% / .3);
+    background-color: rgb(78 87 60 / .3);
     z-index: -1;
     transition: opacity var(--transition);
     backdrop-filter: blur(2px);
