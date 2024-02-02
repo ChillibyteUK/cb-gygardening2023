@@ -21296,6 +21296,7 @@ form .wpcf7-response-output {
   text-align: start;
   text-wrap: balance;
   margin-bottom: 1rem;
+  margin-top: 0.5rem;
 }
 .full-hero .badges__badge img {
   max-width: 140px;
@@ -21335,6 +21336,7 @@ form .wpcf7-response-output {
   text-align: start;
   text-wrap: balance;
   margin-bottom: 1rem;
+  margin-top: 0.5rem;
 }
 
 .gardener_carousel__card {
