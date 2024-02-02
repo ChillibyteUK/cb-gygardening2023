@@ -21426,8 +21426,6 @@ form .wpcf7-response-output {
   isolation: isolate;
   display: grid;
   place-content: center;
-  position: relative;
-  padding: 0.5rem 1rem;
 }
 .child_nav__card:hover .overlay--light {
   opacity: 0.4;
@@ -21441,6 +21439,8 @@ form .wpcf7-response-output {
   text-transform: uppercase;
   font-size: var(--fs-500);
   transition: font-size var(--transition);
+  position: relative;
+  padding: 0.5rem 1rem;
 }
 
 .faq {

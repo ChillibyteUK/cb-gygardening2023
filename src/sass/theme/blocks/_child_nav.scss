@@ -16,8 +16,6 @@
         isolation: isolate;
         display: grid;
         place-content: center;
-        position: relative;
-        padding: 0.5rem 1rem;
         &:hover {
             .overlay--light {
                 opacity: 0.4;
@@ -33,5 +31,7 @@
         text-transform: uppercase;
         font-size: var(--fs-500);
         transition: font-size var(--transition);
+        position: relative;
+        padding: 0.5rem 1rem;
     }
 }
