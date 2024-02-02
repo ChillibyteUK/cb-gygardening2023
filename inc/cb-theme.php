@@ -278,10 +278,10 @@ function gy_custom_password_form()
     $img = wp_get_attachment_image_url(get_field('password_protected_page_hero', 'options'), 'full');
     $output = '
     <section class="short-hero d-flex" style="background-image:url(' . $img . ')">
-        <div class="overlay--light"></div>
         <div class="container-xl d-flex flex-column justify-content-center">
             <div class="row">
                 <div class="col-md-6">
+                    <div class="overlay--light"></div>
                     <h1>Staff Portal</h1>
                 </div>
             </div>

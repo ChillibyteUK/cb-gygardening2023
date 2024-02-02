@@ -1,18 +1,14 @@
 <?php
-$f = get_the_post_thumbnail_url(get_the_ID(), 'full') ?: 'NOPE';
-$img = wp_get_attachment_image_url(get_field('background'), 'full') ?: $f;
+// $f = get_the_post_thumbnail_url(get_the_ID(), 'full') ?: 'NOPE';
+$img = wp_get_attachment_image_url(get_field('background'), 'full'); // ?: $f;
 $class = $block['className'] ?? null;
 ?>
-<pre>
-    F : <?=$f?>
-    I : <?=$img?>
-</pre>
 <section class="short-hero d-flex <?=$class?>"
     style="background-image:url(<?=$img?>)">
-    <div class="overlay--light"></div>
     <div class="container-xl d-flex flex-column justify-content-center">
         <div class="row">
             <div class="col-md-6">
+                <div class="overlay--light"></div>
                 <h1>
                     <?=get_field('title')?>
                 </h1>
