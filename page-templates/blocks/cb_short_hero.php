@@ -7,7 +7,7 @@ $class = $block['className'] ?? null;
     style="background-image:url(<?=$img?>)">
     <div class="container-xl d-flex flex-column justify-content-center">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 position-relative">
                 <div class="overlay--light"></div>
                 <h1>
                     <?=get_field('title')?>
