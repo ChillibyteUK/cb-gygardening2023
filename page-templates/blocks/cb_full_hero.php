@@ -60,29 +60,28 @@ foreach (get_field('slides') as $s) {
                 target="<?=$a['target']?>"><?=$a['title']?></a>
             <?php
     }
+?>
+            <a href="https://www.inspiredearthdesign.co.uk/" class="btn btn-white" target="_blank">Garden Design</a>
+            <?php
+if (get_field('cta_2')) {
+    $a = get_field('cta_2');
     ?>
-    <a href="https://www.inspiredearthdesign.co.uk/"
-        class="btn btn-white"
-        target="_blank">Garden Design</a>
-    <?php
-    if (get_field('cta_2')) {
-        $a = get_field('cta_2');
-        ?>
             <a href="<?=$a['url']?>"
                 class="btn btn-white"
                 target="<?=$a['target']?>"><?=$a['title']?></a>
             <?php
-    }
+}
 ?>
         </div>
         <?php
             if (get_field('badges')) {
                 echo '<div class="badges">';
                 foreach (get_field('badges') as $b) {
+                    $image_alt = get_post_meta($b, '_wp_attachment_image_alt', true);
                     ?>
         <div class="badges__badge">
             <img src="<?=wp_get_attachment_image_url($b, 'full')?>"
-                alt="">
+                alt="<?=$image_alt?>">
         </div>
         <?php
                 }
