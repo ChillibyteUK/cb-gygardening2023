@@ -9,9 +9,11 @@ $classes = $block['className'] ?? null;
         <div class="image_cta__inner">
             <div class="overlay"></div>
             <h2 class="image_cta__title">
-                <?=get_field('title')?></h2>
+                <?=get_field('title')?>
+            </h2>
             <div class="image_cta__content">
-                <?=get_field('content')?></div>
+                <?=get_field('content')?>
+            </div>
             <a href="<?=$c['url']?>"
                 target="<?=$c['target']?>"
                 class="btn btn-white"><?=$c['title']?></a>
