@@ -21346,6 +21346,12 @@ form .wpcf7-response-output {
 .gardener_carousel__card img {
   border-radius: 100vw;
   border: 0.5rem solid var(--col-grey);
+  aspect-ratio: 1;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
 }
 .gardener_carousel__title {
   text-align: center;
