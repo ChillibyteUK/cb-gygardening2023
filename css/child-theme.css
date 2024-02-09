@@ -20960,8 +20960,8 @@ h1 span, .h1 span, h2 span, .h2 span, h3 span, .h3 span, h4 span, .h4 span, .h99
   top: 0.5rem;
   left: 1rem;
   width: 230px;
-  aspect-ratio: 3/1;
-  background-image: url(../img/gy-gardening-logo--wo.svg);
+  aspect-ratio: 6/1;
+  background-image: url(../img/gy-gardening-logo-no-dangles--wo.svg);
   background-size: contain;
   filter: drop-shadow(0 0 1px #444);
 }
