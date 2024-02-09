@@ -21410,6 +21410,10 @@ form .wpcf7-response-output {
   width: 100%;
   max-width: 260px;
   aspect-ratio: 1;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
   margin-inline: auto;
 }
 .gardener_list__card div {

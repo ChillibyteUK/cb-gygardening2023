@@ -12,6 +12,8 @@
             width: 100%;
             max-width: 260px;
             aspect-ratio: 1;
+            object-fit: cover;
+            object-position: center;
             margin-inline: auto;
         }
         div {
