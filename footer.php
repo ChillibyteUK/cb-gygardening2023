@@ -44,7 +44,6 @@ defined('ABSPATH') || exit;
             <div>&copy; <?= date('Y') ?> Grayshaw &amp; Yeo Gardening Company Ltd. Registered in England, No. 07902181
             </div>
             <div class="colophon__links">
-                <a href="/terms/">Terms</a> |
                 <a href="/privacy/">Privacy Policy</a> |
                 <a href="/cookies/">Cookie Preferences</a>
                 <a href="https://www.chillibyte.co.uk/" rel="nofollow noopener" target="_blank" class="cb" title="Digital Marketing by Chillibyte"></a>
