@@ -23,7 +23,7 @@ $bg = get_stylesheet_directory_uri() . '/img/gy-404-pexels-kelly-3119957.jpg';
 </section>
 <div class="container-xl pb-5">
     <div class="text-center">
-        <div class="pb-4">Oops, sorry, nothing growing here!</div>
+        <div class="pb-4 h3">Oops, sorry, nothing growing here!</div>
         <a href="/" target="" class="btn btn-primary">Return to Homepage</a>
     </div>
 </div>
