@@ -6,26 +6,31 @@ get_header();
 ?>
 <main id="main" class="padding-top">
 <?php
-$bg = wp_get_attachment_image_url( get_field('hero_image','options'), 'full' );
+$bg = get_stylesheet_directory_uri() . '/img/gy-404-pexels-kelly-3119957.jpg';
 ?>    
-<!-- hero -->
-<section id="hero" class="hero d-flex align-items-center hero--default mb-0">
-    <div class="overlay"></div>
-    <div class="hero__inner container-xl">
-        <div class="row h-100">
-            <div class="col-lg-6 hero__content d-flex flex-column justify-content-center order-2 order-lg-1 py-5" data-aos="fade">
-                <h1 class="mb-4">404 - Page Not Found</h1>
-                <div class="hero__content fs-5 mb-4">We can't seem to find the page you're looking for</div>
-                <div class="hero__cta">
-                    <a class="btn btn-default--secondary mb-4" href="/">Return to Homepage</a>
-                </div>
-            </div>
-            <div class="col-lg-6 hero__image order-1 order-lg-2" style="background-image:url(<?=$bg?>)">
+<section class="short-hero d-flex"
+    style="background-image:url(<?=$bg?>)">
+    <div class="container-xl d-flex flex-column justify-content-center">
+        <div class="row">
+            <div class="col-md-6 position-relative">
+                <div class="overlay--light"></div>
+                <h1>
+                    404 - Page Not Found
+                </h1>
             </div>
         </div>
     </div>
-    <div class="overlay--bottom"></div>
 </section>
+<div class="container-xl pb-5">
+    <div class="text-center">
+        <div class="pb-4">Oops, sorry, nothing growing here!</div>
+        <a href="/" target="" class="btn btn-primary">Return to Homepage</a>
+    </div>
+</div>
+<?php
+include get_stylesheet_directory() . '/page-templates/blocks/cb_latest_news.php';
+
+?>
 </main>
 <?php
 get_footer();
