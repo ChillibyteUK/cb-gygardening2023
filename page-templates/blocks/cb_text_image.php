@@ -40,7 +40,7 @@ if (get_field('order') == 'image-text') {
                 <?php
                 if (get_field('title')) {
                 ?>
-                    <h2 class="d-none d-lg-block"><?= get_field('title') ?></h2>
+                    <div class="h2 d-none d-lg-block"><?= get_field('title') ?></div>
                 <?php
                 }
                 ?>
