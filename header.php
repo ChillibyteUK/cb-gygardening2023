@@ -87,21 +87,34 @@ if (is_front_page()) {
         {
             "@context": "http://schema.org",
             "@type": "Organization",
-            "name": "---",
+            "name": "Grayshaw & Yeo Gardening Company",
             "url": "https://www.gygardening.co.uk/",
             "logo": "https://www.gygardening.co.uk/wp-content/theme/cb-gygardening2023/img/gy-logo.png",
-            "description": "...",
+            "description": "RHS trained gardeners providing gardening help and plant expertise, whether you have a small courtyard or a country estate, we will ensure it always looks its best. Providing gardening services in Surrey and Sussex",
             "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "---",
-                "addressLocality": "---",
-                "addressRegion": "---",
-                "postalCode": "--- ---",
+                "addressLocality": "Dorking",
+                "addressRegion": "Surrey",
                 "addressCountry": "UK"
             },
-            "telephone": "+44 (0) ---- ------",
-            "email": "hello@gygardening.co.uk"
-        }
+            "email": "hello@gygardening.co.uk",
+            "contactPoint" : [
+                {
+                    "@type" : "ContactPoint",
+                    "telephone" : "07917 208655",
+                    "contactType" : "Jude Yeo"
+                },
+                {
+                    "@type" : "ContactPoint",
+                    "telephone" : "07799 292573",
+                    "contactType" : "Emily Grayshaw"
+                }
+            ],
+            "sameAs": [ 
+                "https://www.instagram.com/grayshawyeo/",
+                "https://www.facebook.com/Grayshaw-and-Yeo-Gardening-Company-Ltd-204835216323355/",
+                "https://www.linkedin.com/company/grayshaw-and-yeo-gardening-company-south-east/"
+            ]
         }
     </script>
     <?php
