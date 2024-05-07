@@ -307,9 +307,9 @@ function custom_login_logo() {
         <style type="text/css">
             #login h1 a, .login h1 a {
                 background-image: url(' . $custom_logo_url . ');
-                height: 64px; // Set this to the height of your logo
-                width: 302px; // Set this to the width of your logo
-                background-size: 302px 64px; // Set this to the width and height of your logo
+                height: 64px;
+                width: 302px;
+                background-size: 302px 64px;
                 background-repeat: no-repeat;
                 padding-bottom: 1rem;
             }
