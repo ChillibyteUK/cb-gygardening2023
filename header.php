@@ -89,7 +89,7 @@ if (is_front_page()) {
             "@type": "Organization",
             "name": "Grayshaw & Yeo Gardening Company",
             "url": "https://www.gygardening.co.uk/",
-            "logo": "https://www.gygardening.co.uk/wp-content/theme/cb-gygardening2023/img/gy-logo.png",
+            "logo": "https://www.gygardening.co.uk/wp-content/themes/cb-gygardening2023/img/gy-logo.png",
             "description": "RHS trained gardeners providing gardening help and plant expertise, whether you have a small courtyard or a country estate, we will ensure it always looks its best. Providing gardening services in Surrey and Sussex",
             "address": {
                 "@type": "PostalAddress",
