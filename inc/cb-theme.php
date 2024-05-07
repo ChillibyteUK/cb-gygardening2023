@@ -302,7 +302,7 @@ add_filter('the_password_form', 'gy_custom_password_form', 99);
 
 // cb branding on wp-login.php
 function custom_login_logo() {
-    $custom_logo_url = '/wp-content/themes/cb-gygardening2023/img/cb-full.jpg'; // Replace YOUR_LOGO_URL with the URL to your logo image
+    $custom_logo_url = '/wp-content/themes/cb-gygardening2023/img/cb-full.jpg';
     echo '
         <style type="text/css">
             #login h1 a, .login h1 a {
