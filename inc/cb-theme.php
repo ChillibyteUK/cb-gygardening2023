@@ -299,6 +299,25 @@ function gy_custom_password_form()
 }
 add_filter('the_password_form', 'gy_custom_password_form', 99);
 
+
+// cb branding on wp-login.php
+function custom_login_logo() {
+    $custom_logo_url = '/wp-content/themes/cb-gygardening2023/img/cb-full.jpg'; // Replace YOUR_LOGO_URL with the URL to your logo image
+    echo '
+        <style type="text/css">
+            #login h1 a, .login h1 a {
+                background-image: url(' . $custom_logo_url . ');
+                height: 32px; // Set this to the height of your logo
+                width: 151px; // Set this to the width of your logo
+                background-size: 151px 32px; // Set this to the width and height of your logo
+                background-repeat: no-repeat;
+                padding-bottom: 30px;
+            }
+        </style>
+    ';
+}
+add_action('login_enqueue_scripts', 'custom_login_logo');
+
 // black thumbnails - fix alpha channel
 /**
  * Patch to prevent black PDF backgrounds.
