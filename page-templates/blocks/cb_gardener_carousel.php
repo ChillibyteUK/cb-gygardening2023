@@ -10,6 +10,7 @@ if (get_field('location') ?? null) {
         'posts_per_page' => -1,
         'orderby' => 'rand',
         'order' => 'ASC',
+        'post_status' => 'publish',
         'tax_query' => array(
             array(
                 'taxonomy' => 'location',

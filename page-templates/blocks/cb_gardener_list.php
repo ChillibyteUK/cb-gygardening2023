@@ -6,7 +6,8 @@ $q = new WP_Query(array(
     'post_type' => 'gardener',
     'posts_per_page' => -1,
     'orderby' => 'rand',
-    'order' => 'ASC'
+    'order' => 'ASC',
+    'post_status' => 'publish'
 ));
 ?>
 <section class="gardener_list py-5 <?=$classes?>">
